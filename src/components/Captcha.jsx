@@ -37,7 +37,7 @@ const App = () => {
         </div>
         <div>
           <ReCAPTCHA
-            sitekey="6LcHrI0qAAAAANdHzEzaS59cJQFboR4dmgECfFr9" // Apna Site Key yahan daalna
+            sitekey="6LcqrI0qAAAAAEyaXXSmLB0Jjugqos80BxQfhi6Y" // Apna Site Key yahan daalna
             onChange={handleRecaptcha}
           />
         </div>
@@ -51,4 +51,3 @@ const App = () => {
 
 export default App;
 
-// sitekey = "6LcHrI0qAAAAANdHzEzaS59cJQFboR4dmgECfFr9"; // Replace with your Site Key

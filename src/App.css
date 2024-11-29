@@ -43,8 +43,6 @@
 
 
 .captcha-center{
-  /* align-self: center; */
   display: flex;
   justify-content: center;
-  border: 1px solid white;
 }

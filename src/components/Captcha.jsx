@@ -7,7 +7,7 @@ const App = () => {
 
   const handleRecaptcha = (token) => {
     if (token) {
-      console.log("reCAPTCHA Token:", token); // Token console pe show hoga
+      // console.log("reCAPTCHA Token:", token); // Token console pe show hoga
       setRecaptchaToken(token); // Token ko state mein store karna
       setIsVerified(true); // reCAPTCHA verified hone par "True" set karna
     } else {
@@ -20,10 +20,18 @@ const App = () => {
     e.preventDefault();
     if (isVerified) {
       // Form submit karne ke liye token send karna
-      console.log("Form submitted with token:", recaptchaToken);
-      alert("Form submitted successfully!");
+      // console.log("Form submitted with token:", recaptchaToken);
+      Swal.fire({
+        icon: "success",
+        title: "Form submitted successfully!",
+        timer: 1500,
+      });
     } else {
-      alert("Please complete the reCAPTCHA!");
+      Swal.fire({
+        icon: "error",
+        title: "Please complete the reCAPTCHA!",
+        timer: 1500,
+      });
     }
   };
 

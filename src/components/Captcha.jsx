@@ -15,7 +15,7 @@ const App = () => {
       setIsVerified(false); // Agar token nahi hai toh "False" set karna
     }
   };
-
+// form submit in future add this logic to form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isVerified) {
@@ -37,7 +37,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Google ReCaptcha Example</h1>
+      <h1>Google ReCaptcha</h1>
 
       {/* reCAPTCHA Component */}
       <div className="captcha-center">
@@ -49,7 +49,7 @@ const App = () => {
 
       {/* Dynamic Display of Verification Status */}
       <div>
-        <h3>ReCaptcha Status: {isVerified ? "True" : "False"}</h3>
+        <h2>Captcha Status: {isVerified ? "True" : "False"}</h2>
       </div>
 
       {/* Submit Button */}

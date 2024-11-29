@@ -9,10 +9,10 @@ const App = () => {
     if (token) {
       console.log("reCAPTCHA Token:", token); // Token console pe show hoga
       setRecaptchaToken(token); // Token ko state mein store karna
-      setIsVerified(true);
+      setIsVerified(true); // reCAPTCHA verified hone par "True" set karna
     } else {
       setRecaptchaToken("");
-      setIsVerified(false);
+      setIsVerified(false); // Agar token nahi hai toh "False" set karna
     }
   };
 
@@ -29,25 +29,27 @@ const App = () => {
 
   return (
     <div>
-      <h1>Google reCAPTCHA Example</h1>
+      <h1>Google ReCaptcha Example</h1>
+
+      {/* reCAPTCHA Component */}
+      <div>
+        <ReCAPTCHA
+          sitekey="6LcqrI0qAAAAAEyaXXSmLB0Jjugqos80BxQfhi6Y" // Apna Site Key yahan daalna
+          onChange={handleRecaptcha}
+        />
+      </div>
+
+      {/* Dynamic Display of Verification Status */}
+      <div>
+        <h3>ReCaptcha Status: {isVerified ? "True" : "False"}</h3>
+      </div>
+
+      {/* Submit Button */}
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div>
-          <ReCAPTCHA
-            sitekey="6LcqrI0qAAAAAEyaXXSmLB0Jjugqos80BxQfhi6Y" // Apna Site Key yahan daalna
-            onChange={handleRecaptcha}
-          />
-        </div>
-        <button type="submit" disabled={!isVerified}>
-          Submit
-        </button>
+        <button type="submit">Submit</button>
       </form>
     </div>
   );
 };
 
 export default App;
-

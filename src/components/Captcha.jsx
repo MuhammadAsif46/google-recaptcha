@@ -3,12 +3,15 @@ import ReCAPTCHA from "react-google-recaptcha";
 
 const App = () => {
   const [isVerified, setIsVerified] = useState(false);
+  const [recaptchaToken, setRecaptchaToken] = useState("");
 
   const handleRecaptcha = (token) => {
     if (token) {
-      console.log("reCAPTCHA Token:", token);
+      console.log("reCAPTCHA Token:", token); // Token console pe show hoga
+      setRecaptchaToken(token); // Token ko state mein store karna
       setIsVerified(true);
     } else {
+      setRecaptchaToken("");
       setIsVerified(false);
     }
   };
@@ -16,6 +19,8 @@ const App = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isVerified) {
+      // Form submit karne ke liye token send karna
+      console.log("Form submitted with token:", recaptchaToken);
       alert("Form submitted successfully!");
     } else {
       alert("Please complete the reCAPTCHA!");
@@ -23,16 +28,16 @@ const App = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "0 auto", padding: "20px" }}>
-      <h1>Google reCAPTCHA in Vite</h1>
+    <div>
+      <h1>Google reCAPTCHA Example</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" name="email" required />
         </div>
-        <div style={{ margin: "20px 0" }}>
+        <div>
           <ReCAPTCHA
-            sitekey="YOUR_SITE_KEY" // Replace with your Site Key
+            sitekey="6LcHrI0qAAAAANdHzEzaS59cJQFboR4dmgECfFr9" // Apna Site Key yahan daalna
             onChange={handleRecaptcha}
           />
         </div>
@@ -45,3 +50,5 @@ const App = () => {
 };
 
 export default App;
+
+// sitekey = "6LcHrI0qAAAAANdHzEzaS59cJQFboR4dmgECfFr9"; // Replace with your Site Key

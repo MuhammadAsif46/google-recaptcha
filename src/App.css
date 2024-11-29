@@ -40,3 +40,11 @@
 .read-the-docs {
   color: #888;
 }
+
+
+.captcha-center{
+  /* align-self: center; */
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+}

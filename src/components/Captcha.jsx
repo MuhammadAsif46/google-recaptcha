@@ -32,7 +32,7 @@ const App = () => {
       <h1>Google ReCaptcha Example</h1>
 
       {/* reCAPTCHA Component */}
-      <div>
+      <div className="captcha-center">
         <ReCAPTCHA
           sitekey="6LcqrI0qAAAAAEyaXXSmLB0Jjugqos80BxQfhi6Y" // Apna Site Key yahan daalna
           onChange={handleRecaptcha}
